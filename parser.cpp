@@ -623,7 +623,7 @@ public:
             expect(T_SEMICOLON);
         }
 
-        tacGenerator.addInstruction("=", exprResult, "", varName);
+        tacGenerator.addInstruction(" ", exprResult, "", varName);
         symbolTable.markInitialized(varName);
     }
 

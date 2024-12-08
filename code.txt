@@ -9,9 +9,10 @@ s = "It is a string problem";
     int sum;
     sum = x + y * 3;
 string d;
-    if(5 > 3){
-        x = 20;
-    }
+if(5 > 3)
+{
+    x = 20;
+}
 else 
 {
     y = 4;
@@ -20,3 +21,9 @@ while(x < 10)
 {
    d= 10;
 }
+int w;
+int i;
+/*for (i = 0; i < 10)
+{
+   w = 20;
+}*/
