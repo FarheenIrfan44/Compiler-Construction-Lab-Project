@@ -254,6 +254,11 @@ public:
                 tokens.push_back(Token{T_SENTENCE, consumeString()});
                 continue;
             }
+            if (current == '\'')
+            {
+                tokens.push_back(Token{T_SENTENCE, consumeString()});
+                continue;
+            }
 
             if (isalpha(current))
             {
@@ -417,13 +422,6 @@ public:
 
         string str = src.substr(start, pos - start);
         pos++; // Skip the closing quote
-
-        // Check if the string represents a number
-        if (all_of(str.begin(), str.end(), ::isdigit))
-        {
-            cout << "Error: Numeric value \"" << str << "\" cannot be a string at line " << line << endl;
-            exit(1);
-        }
 
         return str;
     }
