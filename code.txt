@@ -1,0 +1,22 @@
+int x;
+    x = 10;
+//It is single line
+/*It is multi line */
+string s;
+s = "It is a string problem";
+    int y;
+    y = 20;
+    int sum;
+    sum = x + y * 3;
+string d;
+    if(5 > 3){
+        x = 20;
+    }
+else 
+{
+    y = 4;
+}
+while(x < 10)
+{
+   d= 10;
+}

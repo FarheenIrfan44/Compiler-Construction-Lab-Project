@@ -399,25 +399,37 @@ public:
             pos++;
         return src.substr(start, pos - start);
     }
-    string consumeString()
+   string consumeString()
+{
+    pos++; // Skip the opening double quote
+    size_t start = pos;
+    while (pos < src.size() && src[pos] != '"')
     {
-        pos++; // Skip the opening double quote
-        size_t start = pos;
-        while (pos < src.size() && src[pos] != '"')
-        {
-            pos++;
-        }
-
-        if (pos >= src.size())
-        {
-            cout << "Error: Unterminated string at line " << line << endl;
-            exit(1);
-        }
-
-        string str = src.substr(start, pos - start);
         pos++;
-        return str;
     }
+
+    if (pos >= src.size())
+    {
+        cout << "Error: Unterminated string at line " << line << endl;
+        exit(1);
+    }
+
+    string str = src.substr(start, pos - start);
+    pos++; // Skip the closing quote
+
+    // Check if the string represents a number
+    if (all_of(str.begin(), str.end(), ::isdigit))
+    {
+        cout << "Error: Numeric value \"" << str << "\" cannot be a string at line " << line << endl;
+        exit(1);
+    }
+
+    return str;
+}
+
+
+
+
 
     int getLineNumber() const
     {
