@@ -1,13 +1,14 @@
 int x;
-    x = 10;
+x = 10;
 //It is single line
-/*It is multi line */
+/*It is multi
+ line */
 string s;
 s = "It is a string problem";
-    int y;
-    y = 20;
-    int sum;
-    sum = x + y * 3;
+int y;
+y = 20;
+int sum;
+sum = x + y * 3;
 string d;
 if(5 > 3)
 {
